@@ -91,6 +91,7 @@
                     <a href="#experience" class="hover:text-purple-400 transition-colors">Experience</a>
                     <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
                     <a href="#certifications" class="hover:text-purple-400 transition-colors">Certifications</a>
+                    <a href="#resume" class="hover:text-purple-400 transition-colors">Resume</a>
                     <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-white">
@@ -109,6 +110,7 @@
             <a href="#experience" class="hover:text-purple-400 transition-colors mobile-nav-link">Experience</a>
             <a href="#projects" class="hover:text-purple-400 transition-colors mobile-nav-link">Projects</a>
             <a href="#certifications" class="hover:text-purple-400 transition-colors mobile-nav-link">Certifications</a>
+            <a href="#resume" class="hover:text-purple-400 transition-colors mobile-nav-link">Resume</a>
             <a href="#contact" class="hover:text-purple-400 transition-colors mobile-nav-link">Contact</a>
         </div>
     </div>
@@ -614,6 +616,40 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 4: Terraforming Swarm -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">Terraforming Swarm - Voting App</h3>
+                        <a href="https://github.com/sonalkrsingh/Terraforming_swarm" target="_blank" class="text-purple-400 hover:text-purple-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        End-to-end deployment of Docker Voting App on AWS using Terraform, Packer, Ansible and Azure DevOps Pipelines.
+                    </p>
+                    <div class="mb-4">
+                        <h5 class="font-medium text-purple-400 mb-2">Key Features:</h5>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>Custom AMI creation with Packer</li>
+                            <li>Infrastructure provisioning with Terraform</li>
+                            <li>Docker Swarm cluster orchestration</li>
+                            <li>Automated deployment via Azure DevOps</li>
+                            <li>Configuration management with Ansible</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-medium text-purple-400 mb-2">Technologies:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Terraform</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Packer</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Ansible</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Docker Swarm</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Azure DevOps</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">AWS EC2</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -659,6 +695,35 @@
         </div>
     </section>
 
+    <!-- Resume Section -->
+    <section id="resume" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">My Resume</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto bg-slate-800/50 backdrop-blur-sm rounded-lg p-8 border border-slate-700">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold text-white mb-2">Sonal Kumar Singh - DevOps Engineer</h3>
+                        <p class="text-slate-400 mb-4">View or download my complete resume in PDF format</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="Sonal-Kumar-Singh-Resume.pdf" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition-all flex items-center">
+                                <i data-lucide="eye" class="w-4 h-4 mr-2"></i> View Resume
+                            </a>
+                            <a href="Sonal-Kumar-Singh-Resume.pdf" download class="border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 px-6 py-2 rounded-lg font-semibold transition-all flex items-center">
+                                <i data-lucide="download" class="w-4 h-4 mr-2"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-slate-700/50 p-4 rounded-lg">
+                        <i data-lucide="file-text" class="w-16 h-16 text-purple-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20">
         <div class="container mx-auto px-6 text-center">
@@ -693,7 +758,7 @@
     <footer class="bg-slate-900 border-t border-slate-800 py-6">
         <div class="container mx-auto px-6 text-center text-slate-500">
             <p class="terminal-font">
-                <span class="text-purple-400">sonal@devops:~$</span> <span class="typing-cursor" id="footer-cursor"></span>
+                <span class="text-purple-400">sonal@devops:~$</span> <span class="text-purple-400 typing-cursor" id="footer-cursor"></span>
             </p>
             <p class="mt-4">&copy; <span id="current-year"></span> Sonal Kumar Singh. All rights reserved.</p>
         </div>
@@ -834,6 +899,17 @@ jobs:
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // Smooth scroll for resume download button
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
     </script>
 </body>
 </html>
