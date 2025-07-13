@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonal Kumar Singh - DevOps Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --gray: #1e293b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .terminal-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 4px;
+            border-radius: 2px;
+            transition: width 2s ease-in-out;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+        
+        .section-title {
+            background: linear-gradient(90deg, #8b5cf6, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .cert-badge {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .cert-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="terminal-font text-purple-400 text-lg font-semibold">
+                    <span class="typing-cursor">sonal@devops:~$</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition-colors">Skills</a>
+                    <a href="#experience" class="hover:text-purple-400 transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-purple-400 transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-purple-400 transition-colors">Certifications</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-slate-900 z-40 transform -translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
+            <a href="#home" class="hover:text-purple-400 transition-colors mobile-nav-link">Home</a>
+            <a href="#about" class="hover:text-purple-400 transition-colors mobile-nav-link">About</a>
+            <a href="#skills" class="hover:text-purple-400 transition-colors mobile-nav-link">Skills</a>
+            <a href="#experience" class="hover:text-purple-400 transition-colors mobile-nav-link">Experience</a>
+            <a href="#projects" class="hover:text-purple-400 transition-colors mobile-nav-link">Projects</a>
+            <a href="#certifications" class="hover:text-purple-400 transition-colors mobile-nav-link">Certifications</a>
+            <a href="#contact" class="hover:text-purple-400 transition-colors mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    <span class="section-title">Sonal Kumar Singh</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-2">Certified DevOps Engineer</p>
+                <p class="terminal-font text-purple-400 text-lg">
+                    <span id="typing-text"></span><span class="typing-cursor"></span>
+                </p>
+            </div>
+            
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto mb-8 border border-slate-700">
+                <p class="text-lg text-slate-300 leading-relaxed">
+                    2.7+ years delivering scalable cloud-native solutions across AWS & Azure. 
+                    <span class="text-purple-400 font-semibold">90% faster deployments</span> • 
+                    <span class="text-emerald-400 font-semibold">25% cost reduction</span> • 
+                    <span class="text-blue-400 font-semibold">Zero downtime releases</span>
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all glow-effect">
+                    View Projects
+                </a>
+                <a href="https://github.com/sonalkrsingh" target="_blank" class="border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 px-8 py-3 rounded-lg font-semibold transition-all flex items-center justify-center">
+                    <i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/sonal-kumar-singh-5b5b171a4/" target="_blank" class="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-slate-900 px-8 py-3 rounded-lg font-semibold transition-all flex items-center justify-center">
+                    <i data-lucide="linkedin" class="w-5 h-5 mr-2"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">About Me</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="terminal-font bg-slate-800 p-6 rounded-lg border border-slate-700">
+                        <p class="text-purple-400 mb-2">sonal@devops:~$ cat profile.txt</p>
+                        <p class="text-slate-300 leading-relaxed">
+                            Certified DevOps Engineer specializing in Kubernetes orchestration, GitOps implementation, 
+                            and DevSecOps practices. Passionate about building scalable cloud-native solutions 
+                            that deliver measurable improvements in deployment speed, infrastructure costs, and system reliability.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Key Achievements</h3>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-0.5"></i>
+                                Reduced deployment times by 90% through CI/CD optimizations
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-0.5"></i>
+                                Achieved 25% infrastructure cost savings via Kubernetes optimizations
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-0.5"></i>
+                                Migrated 50+ ETL jobs to AWS EKS with 30% runtime improvement
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-400 mr-3 mt-0.5"></i>
+                                Implemented security gates blocking 15+ vulnerable builds
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700">
+                    <h3 class="text-2xl font-semibold mb-6 text-center text-purple-400">Core Skills</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i data-lucide="cloud" class="w-6 h-6 text-blue-400 mr-3"></i>
+                            <span class="text-slate-300">AWS & Azure</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="container" class="w-6 h-6 text-purple-400 mr-3"></i>
+                            <span class="text-slate-300">Kubernetes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="code" class="w-6 h-6 text-emerald-400 mr-3"></i>
+                            <span class="text-slate-300">Terraform</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="git-merge" class="w-6 h-6 text-blue-400 mr-3"></i>
+                            <span class="text-slate-300">CI/CD Pipelines</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="shield" class="w-6 h-6 text-purple-400 mr-3"></i>
+                            <span class="text-slate-300">DevSecOps</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="monitor" class="w-6 h-6 text-emerald-400 mr-3"></i>
+                            <span class="text-slate-300">Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">Technical Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cloud & DevOps -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="cloud" class="w-8 h-8 text-purple-400 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Cloud & DevOps</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">AWS (EKS, EC2, S3)</span>
+                                <span class="text-purple-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Azure (AKS, VMs)</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Kubernetes</span>
+                                <span class="text-purple-400">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[88%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Terraform</span>
+                                <span class="text-emerald-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="code" class="w-8 h-8 text-blue-400 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Development</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Python</span>
+                                <span class="text-purple-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Bash</span>
+                                <span class="text-blue-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">SQL</span>
+                                <span class="text-purple-400">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Git</span>
+                                <span class="text-emerald-400">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CI/CD & Automation -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="git-merge" class="w-8 h-8 text-purple-400 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">CI/CD & Automation</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Azure DevOps</span>
+                                <span class="text-blue-400">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[92%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">GitHub Actions</span>
+                                <span class="text-purple-400">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[88%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Docker</span>
+                                <span class="text-emerald-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">ArgoCD</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring & Security -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-white">Monitoring & Security</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Prometheus/Grafana</span>
+                                <span class="text-purple-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">ELK Stack</span>
+                                <span class="text-blue-400">82%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[82%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">Trivy</span>
+                                <span class="text-purple-400">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-slate-300">SonarQube</span>
+                                <span class="text-emerald-400">78%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-1">
+                                <div class="skill-bar w-[78%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">Professional Experience</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-purple-400"></div>
+                    
+                    <!-- Current Role -->
+                    <div class="relative mb-12 ml-12">
+                        <div class="absolute -left-8 top-2 w-4 h-4 bg-purple-400 rounded-full border-4 border-slate-900"></div>
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Kubernetes Migration & Cost Optimization</h3>
+                                    <p class="text-purple-400 font-semibold">HCLTech</p>
+                                </div>
+                                <span class="text-slate-400 text-sm">Jan 2024 - Present</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-purple-400 mr-2 mt-1"></i>
+                                    Migrated 50+ ETL jobs to AWS EKS, reducing runtime by 30%
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-purple-400 mr-2 mt-1"></i>
+                                    Achieved 25% cost savings through spot instance configuration
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-purple-400 mr-2 mt-1"></i>
+                                    Deployed centralized monitoring reducing MTTR from 4hrs to 2hrs
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-purple-400 mr-2 mt-1"></i>
+                                    Ensured zero downtime during cutover process
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-purple-400 mr-2 mt-1"></i>
+                                    Documented rollout process for other teams
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Previous Role -->
+                    <div class="relative mb-12 ml-12">
+                        <div class="absolute -left-8 top-2 w-4 h-4 bg-blue-400 rounded-full border-4 border-slate-900"></div>
+                        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">CI/CD Pipeline Overhaul</h3>
+                                    <p class="text-blue-400 font-semibold">HCLTech</p>
+                                </div>
+                                <span class="text-slate-400 text-sm">Nov 2022 - Dec 2023</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 mr-2 mt-1"></i>
+                                    Reduced deployment time from 2hrs to 10mins with Azure DevOps
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 mr-2 mt-1"></i>
+                                    Blocked 15+ vulnerable builds with Trivy and SonarQube scans
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 mr-2 mt-1"></i>
+                                    Implemented ArgoCD reducing manual errors by 40%
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 mr-2 mt-1"></i>
+                                    Analyzed memory leaks using Grafana dashboards
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 mr-2 mt-1"></i>
+                                    Automated log retention cutting storage costs by 20%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">Featured Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">Cruddur - Micro-Blogging Platform</h3>
+                        <a href="https://github.com/sonalkrsingh/aws-project-cruddur" target="_blank" class="text-purple-400 hover:text-purple-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        An ephemeral micro-blogging platform featuring containerized Flask backend, hybrid database model, 
+                        and secure authentication with zero-downtime CI/CD pipeline.
+                    </p>
+                    <div class="mb-4">
+                        <h5 class="font-medium text-purple-400 mb-2">Key Achievements:</h5>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>70% faster release cycles with CodePipeline/CodeBuild</li>
+                            <li>Hybrid database model (PostgreSQL + DynamoDB)</li>
+                            <li>Secure auth with Cognito + Lambda authorizers</li>
+                            <li>React SPA hosted on S3</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-medium text-purple-400 mb-2">Technologies:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Flask</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Docker</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">DynamoDB</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">AWS Lambda</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-purple-500/10 text-purple-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">CodePipeline</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">SpringBoot Pet Clinic - DevSecOps Pipeline</h3>
+                        <a href="https://github.com/sonalkrsingh/springboot-petclinic-devops" target="_blank" class="text-blue-400 hover:text-blue-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        End-to-end DevSecOps pipeline for Java SpringBoot application with comprehensive security scanning 
+                        and multi-cloud deployments.
+                    </p>
+                    <div class="mb-4">
+                        <h5 class="font-medium text-blue-400 mb-2">Key Achievements:</h5>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>70% reduction in vulnerabilities with SAST/DAST scanning</li>
+                            <li>Automated multi-registry deployments (JFrog, ACR, S3)</li>
+                            <li>Self-hosted Azure DevOps agents on AWS EC2</li>
+                            <li>Integrated SonarQube, OWASP ZAP, and Trivy</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-medium text-blue-400 mb-2">Technologies:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Azure DevOps</span>
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">SonarQube</span>
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">OWASP ZAP</span>
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Trivy</span>
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">AWS EC2</span>
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Azure ACI</span>
+                            <span class="bg-blue-500/10 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">JFrog</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-white">LLM Deployment Project</h3>
+                        <a href="https://github.com/sonalkrsingh/llm-deployment" target="_blank" class="text-emerald-400 hover:text-emerald-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Deployment pipeline for Large Language Models with optimized inference and monitoring.
+                    </p>
+                    <div class="mb-4">
+                        <h5 class="font-medium text-emerald-400 mb-2">Key Features:</h5>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300">
+                            <li>Containerized LLM deployment</li>
+                            <li>Optimized inference endpoints</li>
+                            <li>Performance monitoring</li>
+                            <li>Scalable architecture</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-medium text-emerald-400 mb-2">Technologies:</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-emerald-500/10 text-emerald-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Docker</span>
+                            <span class="bg-emerald-500/10 text-emerald-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Kubernetes</span>
+                            <span class="bg-emerald-500/10 text-emerald-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Prometheus</span>
+                            <span class="bg-emerald-500/10 text-emerald-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Grafana</span>
+                            <span class="bg-emerald-500/10 text-emerald-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">Certifications</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Microsoft DevOps -->
+                <a href="https://learn.microsoft.com/en-us/users/20268106/credentials/b8489ca8f05ed049" target="_blank" class="cert-badge bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start">
+                    <i data-lucide="award" class="w-10 h-10 text-purple-400 mr-4 flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">DevOps Engineer Expert</h3>
+                        <p class="text-slate-400">Microsoft Certified (AZ-400)</p>
+                        <p class="text-xs text-purple-400 mt-2">Click to verify credential</p>
+                    </div>
+                </a>
+                
+                <!-- Azure Admin -->
+                <a href="https://learn.microsoft.com/en-us/users/20268106/credentials/db75a7bfbc39fc01" target="_blank" class="cert-badge bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start">
+                    <i data-lucide="award" class="w-10 h-10 text-blue-400 mr-4 flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Azure Administrator Associate</h3>
+                        <p class="text-slate-400">Microsoft Certified</p>
+                        <p class="text-xs text-blue-400 mt-2">Click to verify credential</p>
+                    </div>
+                </a>
+                
+                <!-- Google Cloud -->
+                <a href="https://www.credential.net/d0ff0863-bb4a-449f-ba57-5cf173fa1698" target="_blank" class="cert-badge bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start">
+                    <i data-lucide="award" class="w-10 h-10 text-emerald-400 mr-4 flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Associate Cloud Engineer</h3>
+                        <p class="text-slate-400">Google Cloud Certified</p>
+                        <p class="text-xs text-emerald-400 mt-2">Click to verify credential</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                <span class="section-title">Get In Touch</span>
+            </h2>
+            
+            <div class="max-w-2xl mx-auto bg-slate-800/50 backdrop-blur-sm rounded-lg p-8 border border-slate-700">
+                <p class="text-lg text-slate-300 mb-8">
+                    I'm currently open to new opportunities and collaborations. Feel free to reach out!
+                </p>
+                
+                <div class="space-y-4 text-left max-w-md mx-auto">
+                    <div class="flex items-center">
+                        <i data-lucide="mail" class="w-5 h-5 text-purple-400 mr-4"></i>
+                        <a href="mailto:sonalkumar2790@gmail.com" class="text-slate-300 hover:text-purple-400">sonalkumar2790@gmail.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="github" class="w-5 h-5 text-purple-400 mr-4"></i>
+                        <a href="https://github.com/sonalkrsingh" target="_blank" class="text-slate-300 hover:text-purple-400">github.com/sonalkrsingh</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-purple-400 mr-4"></i>
+                        <a href="https://www.linkedin.com/in/sonal-kumar-singh-5b5b171a4/" target="_blank" class="text-slate-300 hover:text-purple-400">linkedin.com/in/sonal-kumar-singh</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-6">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p class="terminal-font">
+                <span class="text-purple-400">sonal@devops:~$</span> <span class="typing-cursor" id="footer-cursor"></span>
+            </p>
+            <p class="mt-4">&copy; <span id="current-year"></span> Sonal Kumar Singh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GitHub Actions Deployment Instructions -->
+    <div id="deployment-instructions" class="fixed bottom-4 right-4 bg-slate-800/90 backdrop-blur-sm p-4 rounded-lg border border-slate-700 max-w-xs hidden">
+        <h4 class="text-sm font-semibold text-purple-400 mb-2">GitHub Pages Deployment</h4>
+        <p class="text-xs text-slate-300 mb-2">1. Create <code>.github/workflows/deploy.yml</code></p>
+        <pre class="bg-slate-900 p-2 rounded text-xs overflow-x-auto"><code>name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build</code></pre>
+        <button id="close-instructions" class="text-xs text-purple-400 hover:text-purple-300 mt-2">Close</button>
+    </div>
+    <button id="show-instructions" class="fixed bottom-4 right-4 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-all">
+        <i data-lucide="terminal" class="w-5 h-5"></i>
+    </button>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Typewriter effect for hero section
+        const typingText = document.getElementById('typing-text');
+        const phrases = [
+            "Kubernetes Orchestration",
+            "GitOps Implementation",
+            "DevSecOps Practices",
+            "Cloud-Native Solutions",
+            "CI/CD Automation"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                setTimeout(typeWriter, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(typeWriter, 500);
+            } else {
+                setTimeout(typeWriter, isDeleting ? 50 : 100);
+            }
+        }
+        
+        // Start typing effect
+        setTimeout(typeWriter, 1000);
+        
+        // Footer cursor animation
+        setInterval(() => {
+            const cursor = document.getElementById('footer-cursor');
+            cursor.classList.toggle('typing-cursor');
+        }, 500);
+        
+        // Deployment instructions toggle
+        const showInstructions = document.getElementById('show-instructions');
+        const closeInstructions = document.getElementById('close-instructions');
+        const deploymentInstructions = document.getElementById('deployment-instructions');
+        
+        showInstructions.addEventListener('click', () => {
+            deploymentInstructions.classList.toggle('hidden');
+        });
+        
+        closeInstructions.addEventListener('click', () => {
+            deploymentInstructions.classList.add('hidden');
+        });
+        
+        // Animate skill bars on scroll
+        const animateSkillBars = () => {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        };
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'skills') {
+                        animateSkillBars();
+                    }
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
